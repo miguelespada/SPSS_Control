@@ -1,0 +1,10 @@
+{
+  "width" : 1200,
+  "height" : 800,
+  "scale" : 1,
+  "local_port" : 8001,
+  "remote_port" : 7110,
+  "remote_ip_0" : "192.168.1.11",
+  "remote_ip_1" : "192.168.1.12",
+  "remote_ip_2" : "192.168.1.13"
+ }
