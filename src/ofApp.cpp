@@ -8,6 +8,7 @@ void ofApp::setup(){
     
     ofLogNotice() << "Running app";
     app = new App();
+    osc = new OscAdapter(app);
 }
 
 //--------------------------------------------------------------

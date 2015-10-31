@@ -3,6 +3,7 @@
 #include "ofMain.h"
 
 #include "app.h"
+#include "OscAdapter.h"
 
 class ofApp : public ofBaseApp{
 
@@ -13,4 +14,6 @@ class ofApp : public ofBaseApp{
 		void keyPressed(int key);
 		
         App *app;
+    OscAdapter *osc;
+    
 };
