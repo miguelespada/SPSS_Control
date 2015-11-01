@@ -17,7 +17,6 @@ public:
     void keyPressed(int key);
     
     Robot *robots[3];
-    StandbyState *states[3];
     
     void update();
     void draw();

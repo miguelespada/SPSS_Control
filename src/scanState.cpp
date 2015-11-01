@@ -5,33 +5,25 @@
 ScanState::ScanState(Robot *r):BaseState(){
     BaseState::initialize();
     robot = r;
-    
-    int time = ofRandom(2, 6);
-    int a = ofRandom(0, 180);
-    
-    while(abs(r->angle - a) < MIN_DIST)
-         a = ofRandom(0, 180);
-    
-    t = (int)ofRandom(4, 8);
-    
-    r->setDestinationAngle(a, t);
+    next();
 };
 
 ScanState::~ScanState(){
 };
 
 void ScanState::draw(){
-    robot->draw();
 };
 
 void ScanState::update(){
-    robot->update();
-    if(isDone(t))
+    if(!robot->bRunning)
         next();
 };
 
 void ScanState::next(){
-    robot->setCurrentState(new ScanState(robot));
-    delete this;
+    int time = ofRandom(2, 6);
+    int a = 0;
+    if(robot->angle == 0)
+        a = 180;
+    robot->setDestinationAngle(a, time);
 };
 

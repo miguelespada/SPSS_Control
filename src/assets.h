@@ -27,6 +27,14 @@ public:
     ofxFloatSlider r;
     ofxFloatSlider g;
     ofxFloatSlider b;
+    
+    ofxFloatSlider speed;
+    ofxFloatSlider pos_0;
+    ofxFloatSlider pos_1;
+    ofxFloatSlider pos_2;
+    ofxToggle sync;
+    
+    int getPosition(int idx);
 };
 
 #endif

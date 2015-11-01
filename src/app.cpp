@@ -15,14 +15,12 @@ App::App():BaseApp(){
 
     for (int i = 0; i < 3; i ++){
         robots[i] = new Robot(i);
-        states[i] = new StandbyState(robots[i]);
-        robots[i]->setCurrentState(states[i]);
+        robots[i]->setCurrentState(new StandbyState(robots[i]));
     }
 }
 
 App::~App(){
     for (int i = 0; i < 3; i ++){
-        delete states[i];
         delete robots[i];
     }
 }
@@ -31,8 +29,9 @@ void App::keyPressed (int key){
 }
 
 void App::update(){
-    for (int i = 0; i < 3; i ++)
-        states[i]->update();
+    for (int i = 0; i < 3; i ++){
+        robots[i]->update();
+    }
     
     sendToMax();
 }
@@ -80,7 +79,7 @@ void App::draw(){
     ofTranslate(1280, 0);
     ofRect(0, 0, 400, ofGetHeight());
     for (int i = 0; i < 3; i ++){
-        states[i]->draw();
+        robots[i]->draw();
         ofTranslate(0, ofGetHeight() / 3);
     }
     ofPopMatrix();

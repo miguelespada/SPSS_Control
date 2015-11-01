@@ -1,6 +1,8 @@
 #include "robot.h"
 #include "assets.h"
 #include "scanState.h"
+#include "manualState.h"
+#include "noiseState.h"
 
 Robot::Robot(int _id){
     id = _id;
@@ -33,6 +35,7 @@ Robot::~Robot(){
 void Robot::setDestinationAngle(float a, int t){
     if(bRunning)
         return;
+    bRunning = true;
     
     ofxOscMessage m;
     m.setAddress("/servo");
@@ -68,6 +71,14 @@ void Robot::scan(){
     setCurrentState(new ScanState(this));
 }
 
+void Robot::manual(){
+    setCurrentState(new ManualState(this));
+}
+
+void Robot::noise(){
+    setCurrentState(new NoiseState(this));
+}
+
 void Robot::draw(){
     ofPushMatrix();
     ofPushStyle();
@@ -98,6 +109,7 @@ void Robot::drawLastColor(){
     ofTranslate(50, 0);
     ofColor c = lastColor;
     c.setSaturation(255);
+    c.setBrightness(255);
     ofSetColor(c);
     ofRect(0, 0, 45, 45);
     
@@ -193,7 +205,8 @@ void Robot::drawAlive(){
 }
 
 void Robot::update(){
-    if(ofGetFrameNum() % 30 == 0){
+    current_state->update();
+    if(ofGetFrameNum() % 60 == 0){
         bMotorAlive = false;
         bCameraAlive = false;
     }

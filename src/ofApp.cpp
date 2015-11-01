@@ -11,6 +11,7 @@ void ofApp::setup(){
     osc = new OscAdapter(app);
     bFull = false;
     ofSetBackgroundAuto(false);
+    ofSetWindowPosition(0, 0);
     
 }
 
@@ -30,13 +31,13 @@ void ofApp::draw(){
 void ofApp::keyPressed(int key){
     switch (key) {
         case '0':
-            app->robots[0]->setDestinationAngle(0, 5);
+            app->robots[0]->scan();
             break;
         case '1':
-            app->robots[0]->setDestinationAngle(0, 5);
+            app->robots[0]->manual();
             break;
         case '2':
-            app->robots[0]->setDestinationAngle(180, 5);
+            app->robots[0]->noise();
             break;
             
         case 'f':

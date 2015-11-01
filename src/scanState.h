@@ -12,10 +12,11 @@ class ScanState: public BaseState
 public:
     ScanState(Robot *r);
     ~ScanState();
-    string toString() { return "SCAN"; }
+    string toString() { return "Scan"; }
     void update();
     void draw();
     void next();
+
     
 };
 

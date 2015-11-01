@@ -16,11 +16,11 @@
 class Robot
 {
     ofxOscSender *sender;
-    int id;
     class BaseState *current_state;
     ofColor colors[181];
     
 public:
+    int id;
     bool bMotorAlive;
     bool bCameraAlive;
     
@@ -33,6 +33,9 @@ public:
     void setCurrentState(BaseState *s);
     void setCurrentColor(int r, int g, int b);
     void scan();
+    void manual();
+    void noise();
+    
     void draw();
     void update();
     void clean();

@@ -15,6 +15,8 @@
 		41DB37B04B69C442968EA316 /* app.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90BFBBD5A23A6B332DBE2FCB /* app.cpp */; };
 		483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78D67A00EB899FAC09430597 /* ofxLabel.cpp */; };
 		49AA5C5F5D4C471218D5B0E3 /* baseState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EAF0215F3CB3EEA2F412080 /* baseState.cpp */; };
+		49EC41021BE63A0200A43858 /* manualState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49EC41001BE63A0200A43858 /* manualState.cpp */; };
+		49EC41061BE63E0200A43858 /* noiseState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49EC41041BE63E0200A43858 /* noiseState.cpp */; };
 		4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */; };
 		510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6DEF695B88BA5FAACEAA937 /* UdpSocket.cpp */; };
 		5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF49D76C45D5DB505A234880 /* ofxOscMessage.cpp */; };
@@ -119,6 +121,10 @@
 		44E85CB12615AE2DF06AB826 /* OscAdapter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscAdapter.h; path = src/OscAdapter.h; sourceTree = SOURCE_ROOT; };
 		47EADD74A00E26E8E1291F2A /* baseApp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = baseApp.h; path = src/baseApp.h; sourceTree = SOURCE_ROOT; };
 		48974F980F51769171D0B2F5 /* IpEndpointName.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = IpEndpointName.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.h; sourceTree = SOURCE_ROOT; };
+		49EC41001BE63A0200A43858 /* manualState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = manualState.cpp; sourceTree = "<group>"; };
+		49EC41011BE63A0200A43858 /* manualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = manualState.h; sourceTree = "<group>"; };
+		49EC41041BE63E0200A43858 /* noiseState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = noiseState.cpp; sourceTree = "<group>"; };
+		49EC41051BE63E0200A43858 /* noiseState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noiseState.h; sourceTree = "<group>"; };
 		4B948DEC4411B26F3C9BE5DE /* assets.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = assets.cpp; path = src/assets.cpp; sourceTree = SOURCE_ROOT; };
 		4E7BF751B700727A3ED7D7C0 /* standbyState.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = standbyState.cpp; path = src/standbyState.cpp; sourceTree = SOURCE_ROOT; };
 		4E95FB446A9C9C6F0DE12D75 /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscPrintReceivedElements.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscPrintReceivedElements.h; sourceTree = SOURCE_ROOT; };
@@ -284,11 +290,14 @@
 				65E09480F64B1811D13EAFC6 /* app.h */,
 				9E70E4997C53BEBE7DD0CAAD /* robot.cpp */,
 				1A0CCFD92A9EA5D3EDC0C6C2 /* robot.h */,
+				49EC41041BE63E0200A43858 /* noiseState.cpp */,
+				49EC41051BE63E0200A43858 /* noiseState.h */,
 				B6C8ED3A34FC2FB101E6E10E /* scanState.cpp */,
 				D59F38E22863FD039D823F30 /* scanState.h */,
-				B506690DF10DC1631E2DE5CC /* singletonAssets.cpp */,
 				4E7BF751B700727A3ED7D7C0 /* standbyState.cpp */,
 				E98E05C10BCDA4C68BBAF442 /* standbyState.h */,
+				49EC41001BE63A0200A43858 /* manualState.cpp */,
+				49EC41011BE63A0200A43858 /* manualState.h */,
 			);
 			name = app;
 			sourceTree = "<group>";
@@ -296,6 +305,7 @@
 		49EC40FE1BE6317E00A43858 /* base */ = {
 			isa = PBXGroup;
 			children = (
+				B506690DF10DC1631E2DE5CC /* singletonAssets.cpp */,
 				4B948DEC4411B26F3C9BE5DE /* assets.cpp */,
 				5EDDE28A9F00A9326EB8BEDD /* assets.h */,
 				1F44E9EE2EF6349BD0861BC7 /* baseApp.cpp */,
@@ -631,6 +641,7 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
+				49EC41061BE63E0200A43858 /* noiseState.cpp in Sources */,
 				41DB37B04B69C442968EA316 /* app.cpp in Sources */,
 				0ECECEAA015468B5A8B3B9F1 /* assets.cpp in Sources */,
 				79F76218DACB7B009EABAB5F /* baseApp.cpp in Sources */,
@@ -643,6 +654,7 @@
 				AEABAFC731E2C5FF975B73C2 /* standbyState.cpp in Sources */,
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
+				49EC41021BE63A0200A43858 /* manualState.cpp in Sources */,
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
