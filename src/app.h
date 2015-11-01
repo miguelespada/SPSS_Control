@@ -4,10 +4,12 @@
 #include "baseApp.h"
 #include "standbyState.h"
 #include "robot.h"
+#include "ofxOsc.h"
 
 
 class App: public BaseApp
 {
+    ofxOscSender *sender;
     
 public:
     App();
@@ -23,6 +25,8 @@ public:
     void cleanGrid(int b);
     void drawGridColor();
     ofColor gridColor;
+    
+    void sendToMax();
 };
 
 

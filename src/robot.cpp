@@ -7,7 +7,7 @@ Robot::Robot(int _id){
     string host = Assets::getInstance()->getRemoteIp(id);
     int port = Assets::getInstance()->getRemotePort();
     
-    cout << "Sending to "<< host << " " << port << endl;
+    cout << id <<" sending to "<< host << " " << port << endl;
     sender = new ofxOscSender();
     sender->setup(host, port);
 
@@ -185,4 +185,8 @@ void Robot::update(){
         bMotorAlive = false;
         bCameraAlive = false;
     }
+}
+
+int Robot::getBrightness(){
+    return lastColor.getBrightness();
 }

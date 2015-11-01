@@ -10,3 +10,7 @@ string Assets::getRemoteIp(int id){
 int Assets::getRemotePort(){
     return getData("remote_port").asInt();
 }
+
+int Assets::getMaxPort(){
+    return getData("max_port").asInt();
+}

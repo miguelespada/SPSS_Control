@@ -5,6 +5,14 @@
 
 App::App():BaseApp(){
     
+    string host = "localhost";
+    int port = Assets::getInstance()->getMaxPort();
+    
+    cout << "MAX sending to "<< host << " " << port << endl;
+    sender = new ofxOscSender();
+    sender->setup(host, port);
+    
+
     for (int i = 0; i < 3; i ++){
         robots[i] = new Robot(i);
         states[i] = new StandbyState(robots[i]);
@@ -26,6 +34,15 @@ void App::update(){
     for (int i = 0; i < 3; i ++)
         states[i]->update();
     
+    sendToMax();
+}
+
+void App::sendToMax(){
+    ofxOscMessage m;
+    m.setAddress("/values");
+    for (int i = 0; i < 3; i ++)
+        m.addIntArg(robots[i]->getBrightness());
+    sender->sendMessage(m);
 }
 
 void App::drawGridColor(){

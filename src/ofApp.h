@@ -1,7 +1,6 @@
 #pragma once
 
 #include "ofMain.h"
-
 #include "app.h"
 #include "OscAdapter.h"
 
@@ -16,6 +15,6 @@ class ofApp : public ofBaseApp{
         App *app;
         OscAdapter *osc;
         bool bFull;
-    void setFullScreen();
+        void setFullScreen();
     
 };

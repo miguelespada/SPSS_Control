@@ -42,6 +42,8 @@ public:
     void drawAlive();
     void drawFrame();
     
+    int getBrightness();
+    
 };
 
 

@@ -17,6 +17,7 @@ public:
     
     string getRemoteIp(int id);
     int getRemotePort();
+    int getMaxPort();
 };
 
 #endif
