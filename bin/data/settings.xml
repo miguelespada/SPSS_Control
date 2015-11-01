@@ -1,8 +1,13 @@
 <group>
-	<saturation>1.29</saturation>
+	<saturation>0.95</saturation>
 	<brightness>1</brightness>
 	<r>1</r>
-	<g>1</g>
+	<g>1.05</g>
 	<b>0.86</b>
 <group/>
+<sync>1</sync>
+	<time>1</time>
+	<pos_0>90</pos_0>
+	<pos_1>90</pos_1>
+	<pos_2>90</pos_2>
 </group>

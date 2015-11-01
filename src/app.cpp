@@ -40,7 +40,7 @@ void App::sendToMax(){
     ofxOscMessage m;
     m.setAddress("/values");
     for (int i = 0; i < 3; i ++)
-        m.addIntArg(robots[i]->getBrightness());
+        m.addIntArg(robots[i]->lastColor.getSaturation());
     sender->sendMessage(m);
 }
 
