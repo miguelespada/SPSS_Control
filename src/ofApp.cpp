@@ -11,6 +11,7 @@ void ofApp::setup(){
     osc = new OscAdapter(app);
     bFull = false;
     ofSetBackgroundAuto(false);
+    
 }
 
 //--------------------------------------------------------------
@@ -21,19 +22,21 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     app->draw();
+
+    Assets::getInstance()->gui.draw();
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     switch (key) {
         case '0':
-            app->robots[0]->scan();
+            app->robots[0]->setDestinationAngle(0, 5);
             break;
         case '1':
-            app->robots[1]->scan();
+            app->robots[0]->setDestinationAngle(0, 5);
             break;
         case '2':
-            app->robots[2]->scan();
+            app->robots[0]->setDestinationAngle(180, 5);
             break;
             
         case 'f':
@@ -50,6 +53,13 @@ void ofApp::keyPressed(int key){
             app->cleanGrid(255);
             break;
             
+        case 's':
+            Assets::getInstance()->gui.saveToFile("settings.xml");
+            break;
+            
+        case 'l':
+            Assets::getInstance()->gui.loadFromFile("settings.xml");
+            break;
             
         default:
             break;

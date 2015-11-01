@@ -18,11 +18,12 @@ class Robot
     ofxOscSender *sender;
     int id;
     class BaseState *current_state;
-    bool bMotorAlive;
-    bool bCameraAlive;
-    ofColor colors[180];
+    ofColor colors[181];
     
 public:
+    bool bMotorAlive;
+    bool bCameraAlive;
+    
     ofColor lastColor;
     int angle;
     Robot(int _id);
@@ -43,6 +44,8 @@ public:
     void drawFrame();
     
     int getBrightness();
+    bool bRunning;
+    void setMotorState(bool s);
     
 };
 

@@ -26,6 +26,7 @@ void OscAdapter::update(ofEventArgs &args){
         
         if(m.getAddress() == "/angle"){
             app->robots[m.getArgAsInt32(0)]->setCurrentAngle(m.getArgAsInt32(1));
+            app->robots[m.getArgAsInt32(0)]->setMotorState(m.getArgAsInt32(2));
         }
         
         if(m.getAddress() == "/setAngle"){
@@ -39,5 +40,6 @@ void OscAdapter::update(ofEventArgs &args){
         if(m.getAddress() == "/camera"){
             app->robots[m.getArgAsInt32(0)]->setCurrentColor(m.getArgAsInt32(1), m.getArgAsInt32(2), m.getArgAsInt32(3));
         }
+        
     }
 }

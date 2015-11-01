@@ -10,7 +10,7 @@ Robot::Robot(int _id){
     cout << id <<" sending to "<< host << " " << port << endl;
     sender = new ofxOscSender();
     sender->setup(host, port);
-
+    bRunning = false;
     clean();
 }
 
@@ -22,7 +22,7 @@ void Robot::clean(){
     bMotorAlive = false;
     
     lastColor = ofColor(0);
-    for(int i = 0; i < 180; i ++)
+    for(int i = 0; i <= 180; i ++)
         colors[i] = lastColor;
 }
 
@@ -31,12 +31,14 @@ Robot::~Robot(){
 }
 
 void Robot::setDestinationAngle(float a, int t){
+    if(bRunning)
+        return;
+    
     ofxOscMessage m;
     m.setAddress("/servo");
-    m.addIntArg(angle);
     m.addIntArg(a);
     m.addIntArg(t);
-    ofLogNotice() << "[ROBOT " << id << "] " << m.getArgAsInt32(0) << " --> "  << m.getArgAsInt32(1) << " : "  << m.getArgAsInt32(2) << " s";
+    ofLogNotice() << "[ROBOT " << id << "] " << angle << " --> "  << m.getArgAsInt32(0) << " : "  << m.getArgAsInt32(1) << " s";
     sender->sendMessage(m);
 }
 
@@ -50,7 +52,15 @@ void Robot::setCurrentState(BaseState *s){
 }
 
 void Robot::setCurrentColor(int r, int g, int b){
+    bCameraAlive = true;
+    r = ofClamp( r * Assets::getInstance()->r, 0, 255);
+    g = ofClamp( g * Assets::getInstance()->g, 0, 255);
+    b = ofClamp( b * Assets::getInstance()->b, 0, 255);
     lastColor = ofColor(r, g, b);
+    float saturation = ofClamp(lastColor.getSaturation() * Assets::getInstance()->saturation, 0, 255);
+    float brightness = ofClamp(lastColor.getBrightness() *  Assets::getInstance()->brightness, 0, 255);
+    lastColor.setSaturation(saturation);
+    lastColor.setBrightness(brightness);
     colors[angle] = lastColor;
 }
 
@@ -103,7 +113,7 @@ void Robot::drawColors(){
     ofPushMatrix();
     ofPushStyle();
     ofTranslate(100, 55);
-    for(int i = 0; i < 180; i ++){
+    for(int i = 0; i <= 180; i ++){
         ofColor c = colors[i];
         ofPushMatrix();
         ofSetColor(c);
@@ -154,6 +164,8 @@ void Robot::drawInfo(){
     font->drawString(ofToString(angle) + "º", 0, 0);
     ofTranslate(0, 15);
     font->drawString(ofToString(current_state->toString()), 0, 0);
+    ofTranslate(0, 15);
+    font->drawString(ofToString(bRunning), 0, 0);
     
     ofPopStyle();
     ofPopMatrix();
@@ -189,4 +201,8 @@ void Robot::update(){
 
 int Robot::getBrightness(){
     return lastColor.getBrightness();
+}
+
+void Robot::setMotorState(bool s){
+    bRunning = s;
 }

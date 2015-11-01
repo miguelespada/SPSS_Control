@@ -4,6 +4,7 @@
 #define __assets__
 
 #include "baseAssets.h"
+#include "ofxGui.h"
 
 
 class Assets: public BaseAssets
@@ -18,6 +19,14 @@ public:
     string getRemoteIp(int id);
     int getRemotePort();
     int getMaxPort();
+    
+    
+    ofxPanel gui;
+    ofxFloatSlider saturation;
+    ofxFloatSlider brightness;
+    ofxFloatSlider r;
+    ofxFloatSlider g;
+    ofxFloatSlider b;
 };
 
 #endif

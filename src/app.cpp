@@ -53,20 +53,22 @@ void App::drawGridColor(){
     
     int i = ofGetFrameNum() % 3;
     
-    int x = int(ofRandom(GRID_N));
-    int y = int(ofRandom(GRID_N));
-    
-    
-    ofSetColor(robots[i]->lastColor);
-    ofFill();
-    ofRect(x *  1280 / GRID_N, y *  800 / GRID_N, 1280 / GRID_N, 800 / GRID_N);
-    
-    ofSetColor(gridColor);
-    ofSetLineWidth(GRID_WEIGHT);
-    ofNoFill();
-    ofRect(x *  1280 / GRID_N, y *  800 / GRID_N, 1280 / GRID_N, 800 / GRID_N);
-    
-    ofPopStyle();
+    if(robots[i]->bCameraAlive) {
+        int x = int(ofRandom(GRID_N));
+        int y = int(ofRandom(GRID_N));
+        
+        
+        ofSetColor(robots[i]->lastColor);
+        ofFill();
+        ofRect(x *  1280 / GRID_N, y *  800 / GRID_N, 1280 / GRID_N, 800 / GRID_N);
+        
+        ofSetColor(gridColor);
+        ofSetLineWidth(GRID_WEIGHT);
+        ofNoFill();
+        ofRect(x *  1280 / GRID_N, y *  800 / GRID_N, 1280 / GRID_N, 800 / GRID_N);
+        
+        ofPopStyle();
+    }
 }
 
 void App::draw(){
