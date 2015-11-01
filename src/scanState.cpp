@@ -14,16 +14,18 @@ ScanState::ScanState(Robot *r):BaseState(){
     
     t = (int)ofRandom(4, 8);
     
-    r->setAngle(a, t);
+    r->setDestinationAngle(a, t);
 };
 
 ScanState::~ScanState(){
 };
 
 void ScanState::draw(){
+    robot->draw();
 };
 
 void ScanState::update(){
+    robot->update();
     if(isDone(t))
         next();
 };

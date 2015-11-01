@@ -4,7 +4,7 @@ BaseAssets::BaseAssets(){
     string path = ofToDataPath("settings.json");
     ofLogNotice() << "Loading settings from: " << path;
     settings.open(path);
-    default_font = "Lato-Bold.ttf";
+    default_font = "ProximaNova.otf";
     ofTrueTypeFont::setGlobalDpi(72);
     clearFonts();
 }
@@ -51,7 +51,7 @@ int BaseAssets::getHeight(){
 }
 void BaseAssets::loadFont(int size){
     fonts[size] = new ofTrueTypeFont();
-    fonts[size]->loadFont(default_font, size);
+    fonts[size]->loadFont(default_font, size, true, true, true);
     fonts[size]->setLetterSpacing(1.1);
     fonts[size]->setSpaceSize(0.3);
     ofLogNotice() << "Loading font: " << default_font << " " << size << " pxs";

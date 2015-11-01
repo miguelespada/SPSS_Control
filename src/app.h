@@ -20,6 +20,9 @@ public:
     void update();
     void draw();
     
+    void cleanGrid(int b);
+    void drawGridColor();
+    ofColor gridColor;
 };
 
 

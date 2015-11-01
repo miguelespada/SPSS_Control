@@ -14,6 +14,8 @@ class ofApp : public ofBaseApp{
 		void keyPressed(int key);
 		
         App *app;
-    OscAdapter *osc;
+        OscAdapter *osc;
+        bool bFull;
+    void setFullScreen();
     
 };

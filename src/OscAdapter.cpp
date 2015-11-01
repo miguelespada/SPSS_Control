@@ -25,15 +25,19 @@ void OscAdapter::update(ofEventArgs &args){
         receiver->getNextMessage(&m);
         
         if(m.getAddress() == "/angle"){
-            app->robots[m.getArgAsInt32(0)]->angle = m.getArgAsInt32(1);
+            app->robots[m.getArgAsInt32(0)]->setCurrentAngle(m.getArgAsInt32(1));
         }
         
         if(m.getAddress() == "/setAngle"){
-            app->robots[m.getArgAsInt32(0)]->setAngle(m.getArgAsInt32(1), m.getArgAsInt32(2));
+            app->robots[m.getArgAsInt32(0)]->setDestinationAngle(m.getArgAsInt32(1), m.getArgAsInt32(2));
         }
         
         if(m.getAddress() == "/scan"){
             app->robots[m.getArgAsInt32(0)]->scan();
+        }
+        
+        if(m.getAddress() == "/camera"){
+            app->robots[m.getArgAsInt32(0)]->setCurrentColor(m.getArgAsInt32(1), m.getArgAsInt32(2), m.getArgAsInt32(3));
         }
     }
 }

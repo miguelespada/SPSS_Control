@@ -9,9 +9,11 @@ StandbyState::~StandbyState(){
 };
 
 void StandbyState::draw(){
+    robot->draw();
 };
 
 void StandbyState::update(){
+    robot->update();
 };
 
 void StandbyState::next(){

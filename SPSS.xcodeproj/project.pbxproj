@@ -275,6 +275,39 @@
 			name = ofxGui;
 			sourceTree = "<group>";
 		};
+		49EC40F71BE5F4B600A43858 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				49EC40E11BE5437500A43858 /* app.cpp */,
+				49EC40E21BE5437500A43858 /* app.h */,
+				49EC40E71BE545A800A43858 /* robot.cpp */,
+				49EC40E81BE545A800A43858 /* robot.h */,
+				49EC40E41BE543CC00A43858 /* standbyState.cpp */,
+				49EC40E51BE543CC00A43858 /* standbyState.h */,
+				49EC40F11BE5571E00A43858 /* scanState.cpp */,
+				49EC40F21BE5571E00A43858 /* scanState.h */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		49EC40F81BE5F4C400A43858 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				49EC40D01BE542C600A43858 /* assets.cpp */,
+				49EC40D11BE542C600A43858 /* assets.h */,
+				49EC40D21BE542C600A43858 /* baseApp.cpp */,
+				49EC40D31BE542C600A43858 /* baseApp.h */,
+				49EC40D41BE542C600A43858 /* baseAssets.cpp */,
+				49EC40D51BE542C600A43858 /* baseAssets.h */,
+				49EC40D61BE542C600A43858 /* baseState.cpp */,
+				49EC40D71BE542C600A43858 /* baseState.h */,
+				49EC40D81BE542C600A43858 /* singletonAssets.cpp */,
+				49EC40DE1BE542E600A43858 /* OscAdapter.cpp */,
+				49EC40DF1BE542E600A43858 /* OscAdapter.h */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
 		58AD3BD71B781D9BC25763C8 /* json */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,28 +491,11 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				49EC40DE1BE542E600A43858 /* OscAdapter.cpp */,
-				49EC40DF1BE542E600A43858 /* OscAdapter.h */,
-				49EC40D01BE542C600A43858 /* assets.cpp */,
-				49EC40D11BE542C600A43858 /* assets.h */,
-				49EC40D21BE542C600A43858 /* baseApp.cpp */,
-				49EC40D31BE542C600A43858 /* baseApp.h */,
-				49EC40D41BE542C600A43858 /* baseAssets.cpp */,
-				49EC40D51BE542C600A43858 /* baseAssets.h */,
-				49EC40D61BE542C600A43858 /* baseState.cpp */,
-				49EC40D71BE542C600A43858 /* baseState.h */,
-				49EC40D81BE542C600A43858 /* singletonAssets.cpp */,
+				49EC40F81BE5F4C400A43858 /* Base */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
-				49EC40E11BE5437500A43858 /* app.cpp */,
-				49EC40E21BE5437500A43858 /* app.h */,
-				49EC40E71BE545A800A43858 /* robot.cpp */,
-				49EC40E81BE545A800A43858 /* robot.h */,
-				49EC40E41BE543CC00A43858 /* standbyState.cpp */,
-				49EC40E51BE543CC00A43858 /* standbyState.h */,
-				49EC40F11BE5571E00A43858 /* scanState.cpp */,
-				49EC40F21BE5571E00A43858 /* scanState.h */,
+				49EC40F71BE5F4B600A43858 /* Application */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
