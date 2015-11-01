@@ -18,6 +18,7 @@ void Assets::loadAssets(){
     gui.add(pos_1.setup( "pos_1", 90, 0, 180 ));
     gui.add(pos_2.setup( "pos_2", 90, 0, 180 ));
     
+    gui.add(automatic.setup("automatic", false));
     gui.loadFromFile("settings.xml");
 }
 
@@ -45,7 +46,6 @@ int Assets::getPosition(int idx){
         case 2:
             return pos_2;
             break;
-            
         default:
             break;
     }

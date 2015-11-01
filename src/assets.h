@@ -33,6 +33,7 @@ public:
     ofxFloatSlider pos_1;
     ofxFloatSlider pos_2;
     ofxToggle sync;
+    ofxToggle automatic;
     
     int getPosition(int idx);
     void setPosition(int idx, int pos);

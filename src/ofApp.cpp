@@ -30,17 +30,20 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     switch (key) {
-        case '0':
-            app->robots[0]->scan();
-            break;
         case '1':
-            app->robots[0]->manual();
+            app->scan();
             break;
         case '2':
-            app->robots[0]->noise();
+            app->manual();
             break;
         case '3':
-            app->robots[0]->search();
+            app->noise();
+            break;
+        case '4':
+            app->search();
+            break;
+        case '0':
+            Assets::getInstance()->automatic = !Assets::getInstance()->automatic;
             break;
             
         case 'f':

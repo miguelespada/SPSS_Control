@@ -26,6 +26,14 @@ public:
     ofColor gridColor;
     
     void sendToMax();
+    
+    void scan();
+    void manual();
+    void noise();
+    void search();
+    void automatic();
+    bool bAutomatic;
+    
 };
 
 

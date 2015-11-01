@@ -33,6 +33,9 @@ void App::update(){
         robots[i]->update();
     }
     
+    if(Assets::getInstance()->automatic)
+        automatic();
+    
     sendToMax();
 }
 
@@ -55,7 +58,6 @@ void App::drawGridColor(){
     if(robots[i]->bCameraAlive) {
         int x = int(ofRandom(GRID_N));
         int y = int(ofRandom(GRID_N));
-        
         
         ofSetColor(robots[i]->lastColor);
         ofFill();
@@ -107,4 +109,36 @@ void App::cleanGrid(int b){
     }
     
     ofPopStyle();
+}
+
+void App::scan(){
+    for (int i = 0; i < 3; i ++)
+        robots[i]->scan();
+}
+
+void App::noise(){
+    for (int i = 0; i < 3; i ++)
+        robots[i]->noise();
+}
+
+void App::search(){
+    
+    for (int i = 0; i < 3; i ++)
+        robots[i]->search();
+}
+
+void App::manual(){
+    for (int i = 0; i < 3; i ++)
+        robots[i]->manual();
+}
+
+void App::automatic(){
+    if(ofGetFrameNum() % 150 == 0){
+        if(ofRandom(1) > 0.5){
+            scan();
+        }
+        else{
+            search();
+        }
+    }
 }
