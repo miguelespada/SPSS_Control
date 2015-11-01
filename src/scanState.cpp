@@ -1,11 +1,11 @@
 #include "scanState.h"
 
-#define MIN_DIST 100
-
 ScanState::ScanState(Robot *r):BaseState(){
     BaseState::initialize();
     robot = r;
-    next();
+    
+   
+    
 };
 
 ScanState::~ScanState(){

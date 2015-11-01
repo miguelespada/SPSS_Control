@@ -50,3 +50,21 @@ int Assets::getPosition(int idx){
             break;
     }
 }
+
+
+void Assets::setPosition(int idx, int pos){
+    switch (idx) {
+        case 0:
+            pos_0 = pos;
+            break;
+        case 1:
+            pos_1 = pos;
+            break;
+        case 2:
+            pos_2 = pos;
+            break;
+            
+        default:
+            break;
+    }
+}

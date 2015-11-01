@@ -13,7 +13,7 @@ protected:
     
 public:
     BaseState();
-    ~BaseState();
+    virtual ~BaseState();
     
     bool isDone(int duration);
     void initialize();

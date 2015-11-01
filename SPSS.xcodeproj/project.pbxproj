@@ -17,6 +17,7 @@
 		49AA5C5F5D4C471218D5B0E3 /* baseState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EAF0215F3CB3EEA2F412080 /* baseState.cpp */; };
 		49EC41021BE63A0200A43858 /* manualState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49EC41001BE63A0200A43858 /* manualState.cpp */; };
 		49EC41061BE63E0200A43858 /* noiseState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49EC41041BE63E0200A43858 /* noiseState.cpp */; };
+		49EC41091BE645A300A43858 /* searchState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49EC41071BE645A300A43858 /* searchState.cpp */; };
 		4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */; };
 		510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6DEF695B88BA5FAACEAA937 /* UdpSocket.cpp */; };
 		5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF49D76C45D5DB505A234880 /* ofxOscMessage.cpp */; };
@@ -125,6 +126,8 @@
 		49EC41011BE63A0200A43858 /* manualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = manualState.h; sourceTree = "<group>"; };
 		49EC41041BE63E0200A43858 /* noiseState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = noiseState.cpp; sourceTree = "<group>"; };
 		49EC41051BE63E0200A43858 /* noiseState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noiseState.h; sourceTree = "<group>"; };
+		49EC41071BE645A300A43858 /* searchState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = searchState.cpp; sourceTree = "<group>"; };
+		49EC41081BE645A300A43858 /* searchState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchState.h; sourceTree = "<group>"; };
 		4B948DEC4411B26F3C9BE5DE /* assets.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = assets.cpp; path = src/assets.cpp; sourceTree = SOURCE_ROOT; };
 		4E7BF751B700727A3ED7D7C0 /* standbyState.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = standbyState.cpp; path = src/standbyState.cpp; sourceTree = SOURCE_ROOT; };
 		4E95FB446A9C9C6F0DE12D75 /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscPrintReceivedElements.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscPrintReceivedElements.h; sourceTree = SOURCE_ROOT; };
@@ -292,6 +295,8 @@
 				1A0CCFD92A9EA5D3EDC0C6C2 /* robot.h */,
 				49EC41041BE63E0200A43858 /* noiseState.cpp */,
 				49EC41051BE63E0200A43858 /* noiseState.h */,
+				49EC41071BE645A300A43858 /* searchState.cpp */,
+				49EC41081BE645A300A43858 /* searchState.h */,
 				B6C8ED3A34FC2FB101E6E10E /* scanState.cpp */,
 				D59F38E22863FD039D823F30 /* scanState.h */,
 				4E7BF751B700727A3ED7D7C0 /* standbyState.cpp */,
@@ -658,6 +663,7 @@
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
+				49EC41091BE645A300A43858 /* searchState.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,

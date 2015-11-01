@@ -35,6 +35,7 @@ public:
     void scan();
     void manual();
     void noise();
+    void search();
     
     void draw();
     void update();
@@ -50,6 +51,7 @@ public:
     bool bRunning;
     void setMotorState(bool s);
     
+    int findBestColor();
 };
 
 

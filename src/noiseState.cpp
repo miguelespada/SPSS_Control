@@ -22,13 +22,12 @@ void NoiseState::update(){
 };
 
 void NoiseState::next(){
-    int time = 1;
     int a = Assets::getInstance()->getPosition(robot->id);
     
     a = ofClamp(a + ofRandom(-20, 20), 0, 180);
     
     if(a != int(robot->angle))
-        robot->setDestinationAngle(a, time);
+        robot->setDestinationAngle(a, 1);
     
 };
 

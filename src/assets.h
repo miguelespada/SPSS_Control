@@ -35,6 +35,7 @@ public:
     ofxToggle sync;
     
     int getPosition(int idx);
+    void setPosition(int idx, int pos);
 };
 
 #endif

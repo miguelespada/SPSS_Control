@@ -3,6 +3,7 @@
 #include "scanState.h"
 #include "manualState.h"
 #include "noiseState.h"
+#include "searchState.h"
 
 Robot::Robot(int _id){
     id = _id;
@@ -68,16 +69,25 @@ void Robot::setCurrentColor(int r, int g, int b){
 }
 
 void Robot::scan(){
+    delete current_state;
     setCurrentState(new ScanState(this));
 }
 
 void Robot::manual(){
+    delete current_state;
     setCurrentState(new ManualState(this));
 }
 
 void Robot::noise(){
+    delete current_state;
     setCurrentState(new NoiseState(this));
 }
+
+void Robot::search(){
+    delete current_state;
+    setCurrentState(new SearchState(this));
+}
+
 
 void Robot::draw(){
     ofPushMatrix();
@@ -218,4 +228,19 @@ int Robot::getBrightness(){
 
 void Robot::setMotorState(bool s){
     bRunning = s;
+}
+
+int Robot::findBestColor(){
+    int a = -1;
+    int best = -1;
+    
+    for(int i = 0; i <= 180; i ++){
+        int v = colors[i].getSaturation();
+        if(v > best){
+            best = v;
+            a = i;
+        }
+    }
+    ofLogNotice() << "[BEST ANGLE] " << a;
+    return a;
 }

@@ -1,7 +1,6 @@
 #include "manualState.h"
 #include "assets.h"
 
-#define MIN_DIST 100
 
 ManualState::ManualState(Robot *r):BaseState(){
     BaseState::initialize();

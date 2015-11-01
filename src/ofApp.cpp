@@ -39,6 +39,9 @@ void ofApp::keyPressed(int key){
         case '2':
             app->robots[0]->noise();
             break;
+        case '3':
+            app->robots[0]->search();
+            break;
             
         case 'f':
             bFull = !bFull;
