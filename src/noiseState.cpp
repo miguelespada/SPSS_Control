@@ -26,8 +26,11 @@ void NoiseState::next(){
     
     a = ofClamp(a + ofRandom(-20, 20), 0, 180);
     
-    if(a != int(robot->angle))
-        robot->setDestinationAngle(a, 1);
-    
+    float dist = abs(a - robot->angle);
+    if(a != 0){
+        int t = dist / 20;
+        if(t <= 1) t = 1;
+        robot->setDestinationAngle(a, t);
+    }
 };
 

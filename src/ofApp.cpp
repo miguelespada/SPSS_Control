@@ -77,12 +77,10 @@ void ofApp::setFullScreen(){
     if(bFull){
         ofSetFullscreen(true);
         ofSetWindowPosition(-1280, 0);
-        ofHideCursor();
     }
     else{
         ofSetFullscreen(false);
         ofSetWindowPosition(0, 0);
-        ofShowCursor();
     }
     
 }

@@ -20,7 +20,7 @@ Robot::Robot(int _id){
 void Robot::clean(){
     
     angle = 0;
-    setDestinationAngle(angle, 1);
+    setDestinationAngle(angle, 6);
     bCameraAlive = false;
     bMotorAlive = false;
     
@@ -165,9 +165,21 @@ void Robot::drawFrame(){
     ofPushMatrix();
     ofPushStyle();
     
+    
+    
+    if(id == 0)
+        ofSetColor(200, 255, 200);
+    else if(id == 1)
+        ofSetColor(255, 255, 200);
+    else if(id == 2)
+        ofSetColor(200, 200, 255);
+    
+    ofFill();
+    ofRect(0, 0, 400, ofGetHeight()/3);
+    
+    ofSetColor(0);
     ofNoFill();
     ofSetLineWidth(5);
-    ofSetColor(0);
     ofRect(0, 0, 400, ofGetHeight()/3);
     
     ofPopStyle();

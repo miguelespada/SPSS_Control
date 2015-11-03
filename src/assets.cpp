@@ -13,7 +13,7 @@ void Assets::loadAssets(){
     
     gui.add(sync.setup("sync", true));
     
-    gui.add(speed.setup( "time", 1, 1, 10 ));
+    gui.add(speed.setup( "time", 9, 7, 14 ));
     gui.add(pos_0.setup( "pos_0", 90, 0, 180 ));
     gui.add(pos_1.setup( "pos_1", 90, 0, 180 ));
     gui.add(pos_2.setup( "pos_2", 90, 0, 180 ));

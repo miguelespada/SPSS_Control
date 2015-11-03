@@ -20,10 +20,9 @@ void ScanState::update(){
 };
 
 void ScanState::next(){
-    int time = ofRandom(2, 6);
     int a = 0;
     if(robot->angle == 0)
         a = 180;
-    robot->setDestinationAngle(a, time);
+    robot->setDestinationAngle(a, 9);
 };
 

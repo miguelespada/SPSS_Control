@@ -22,8 +22,9 @@ void SearchState::update(){
 void SearchState::next(){
     int a = robot->findBestColor();
     Assets::getInstance()->setPosition(robot->id, a);
+    
     if(a != int(robot->angle))
-        robot->setDestinationAngle(a, 1);
+        robot->setDestinationAngle(a, 5);
     
 };
 
